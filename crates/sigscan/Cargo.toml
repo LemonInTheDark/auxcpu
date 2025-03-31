@@ -1,0 +1,19 @@
+[package]
+name = "auxcpu-sigscan"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+publish.workspace = true
+
+[dependencies]
+cfg-if = "1"
+
+[target.'cfg(windows)'.dependencies]
+windows = { version = "0.61", features = ["Win32_Networking_WinSock", "Win32_Foundation", "Win32_System_LibraryLoader", "Win32_System_ProcessStatus", "Win32_System_Threading"] }
+
+[target.'cfg(target_os = "linux")'.dependencies]
+libc = "0.2"
+
+[lints]
+workspace = true

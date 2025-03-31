@@ -1,0 +1,7 @@
+# Common settings that generally should always be used with your language specific settings
+
+# Auto detect text files and perform LF normalization
+*          text=auto eol=lf
+
+*.dm       eol=crlf
+*.dme      eol=crlf

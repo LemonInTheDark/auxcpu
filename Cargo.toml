@@ -1,0 +1,32 @@
+[workspace]
+resolver = "3"
+members = ["crates/auxtools", "crates/byondapi", "crates/core", "crates/impl", "crates/sigscan"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "Zlib"
+authors = ["Lucy <lucy@absolucy.moe>"]
+publish = false
+
+[workspace.lints.clippy]
+# presets
+complexity = "warn"
+correctness = "warn"
+perf = "warn"
+style = "warn"
+suspicious = "warn"
+# individual lints
+assigning_clones = "warn"
+create_dir = "warn"
+default_trait_access = "warn"
+inefficient_to_string = "warn"
+redundant_type_annotations = "warn"
+self_named_module_files = "warn"
+str_to_string = "warn"
+string_to_string = "warn"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+overflow-checks = false
